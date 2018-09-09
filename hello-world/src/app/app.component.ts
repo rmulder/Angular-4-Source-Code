@@ -10,4 +10,8 @@ export class AppComponent {
     title : 'Saravana',
     isFavourite : false
   }
+
+  onChangeFavourite(){
+    console.log("Method triggered");
+  }
 }
