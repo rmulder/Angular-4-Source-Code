@@ -16,7 +16,7 @@ export class AppComponent {
     let userName: string = eventArgs.username;
     let password: string = eventArgs.password;
     if(userName.endsWith('na')) {
-      console.log("Username" + userName);
+      console.log("Username" +"***" +  userName);
     } else {
       console.log(userName + "****" + password);
     }
