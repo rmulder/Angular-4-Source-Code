@@ -1,3 +1,4 @@
+import { UserDetails } from './favorite/favorite.component';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,7 +12,13 @@ export class AppComponent {
     isFavourite : false
   }
 
-  onChangeFavourite(){
-    console.log("Method triggered");
+  onChangeFavourite(eventArgs : UserDetails){
+    let userName: string = eventArgs.username;
+    let password: string = eventArgs.password;
+    if(userName.endsWith('na')) {
+      console.log("Username" + userName);
+    } else {
+      console.log(userName + "****" + password);
+    }
   }
 }

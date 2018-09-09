@@ -14,7 +14,14 @@ export class FavoriteComponent implements OnInit {
   }
 
   onClick() {
+    let value = {'username':'saravana','password':'prasanth'};
     this.isFavourite = !this.isFavourite;
-    this.change.emit();
+    this.change.emit(value);
   }
+  
+}
+export interface UserDetails {
+  username : string;
+  password : string;
+
 }
