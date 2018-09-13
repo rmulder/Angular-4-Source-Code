@@ -9,6 +9,7 @@ import { CoursesComponent } from './courses.component';
 import { CoursesService } from './courses.service';
 import { CourseComponent } from './course/course.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { PanelComponent } from './panel/panel.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule, FormsModule
