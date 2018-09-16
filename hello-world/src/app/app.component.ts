@@ -12,6 +12,11 @@ export class AppComponent {
     isFavourite : false
   }
 
+  tweet = {
+    isActive : 'true',
+    likesCount : 10
+  }
+
   onChangeFavourite(eventArgs : UserDetails){
     let userName: string = eventArgs.username;
     let password: string = eventArgs.password;
