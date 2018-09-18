@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  coursesCount = [12,34,45];
+
   post = {
     title : 'Saravana',
     isFavourite : false

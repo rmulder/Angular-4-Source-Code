@@ -8,9 +8,17 @@
         <p>There is some content
         </p>
     </div>
-
 </bootstrap-panel> -->
+<!-- <app-like [isActive] = "tweet.isActive" [likesCount] = "tweet.likesCount">
+</app-like>  -->
 
-<app-like [isActive] = "tweet.isActive" [likesCount] = "tweet.likesCount">
-
-</app-like> 
+<div *ngIf="coursesCount.length > 0 then ifpart else elsePart"></div>
+<ng-template #ifpart>
+Some Courses are present
+</ng-template>
+<ng-template #elsePart>
+ No Courses
+</ng-template>
+<!-- <div *ngIf="coursesCount.length == 0">
+    No Courses
+</div> -->
