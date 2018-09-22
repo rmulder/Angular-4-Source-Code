@@ -30,15 +30,28 @@ Some Courses are present
     No Courses Yet..!
 </div> -->
 
-<ul class="nav nav-pills" [ngClass]="'externalClass'">
+<!-- <ul class="nav nav-pills" [ngClass]="'externalClass'">
     <!-- <li [class.active] = "viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
     <li [class.active] = "viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>     -->
 
-    <li [class.active] = "viewMode == 'map'"><a (click)="onTabClick('map')">Map View</a></li>
+    <!-- <li [class.active] = "viewMode == 'map'"><a (click)="onTabClick('map')">Map View</a></li>
     <li [class.active] = "viewMode == 'list'"><a (click)="onTabClick('list')">List View</a></li>    
 </ul>
 <div [ngSwitch]="viewMode">
     <div *ngSwitchCase = "'map'">Map View Content</div>
     <div *ngSwitchCase = "'list'">List View Content</div>
     <div *ngSwitchDefault>Default Value for Switch ngSwitchCase</div>
-</div>
+</div> --> 
+
+<button class="btn btn-primary" (click) = "onAddButton()">ADD</button>
+<ul>
+    <li *ngFor = "let course of courses;index as i; 
+    even as isEven; odd as isOdd; first as initialValue">
+        {{i + '-->' +course.name}}
+        <span *ngIf=(initialValue)>INITIAL</span>
+        <span *ngIf=(isEven)>EVEN</span>
+        <span *ngIf=(isOdd)>ODD</span>
+        <button *ngIf=(initialValue) class="btn btn-danger" (click)="onRemoveButton(course)">REMOVE</button>
+        <button class="btn btn-info" (click)="onUpdateButton(course)">UPDATE</button>
+    </li>
+</ul>

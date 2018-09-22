@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  courses = [
+    { id: 1, name: 'Saravana'},
+    { id: 2, name: 'Prasanth'},
+    { id: 3, name: 'Natarajan'}
+  ];
+
   viewMode = 'map';
 
   coursesCount = [];
@@ -35,6 +41,20 @@ export class AppComponent {
 
   onTabClick(viewMode){
       this.viewMode  = viewMode;
-
   }
+
+  onAddButton(){
+    this.courses.push({id:4 ,name:'Mallika'});
+  }
+
+  onRemoveButton(course){
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
+
+  onUpdateButton(course){
+    course.name = 'UPDATED ONE';
+  }
+
+
 }
