@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  coursesCount = [12,34,45];
+  viewMode = 'map';
+
+  coursesCount = [];
 
   post = {
     title : 'Saravana',
@@ -28,5 +30,11 @@ export class AppComponent {
     } else {
       console.log(userName + "****" + password);
     }
+  }
+
+
+  onTabClick(viewMode){
+      this.viewMode  = viewMode;
+
   }
 }

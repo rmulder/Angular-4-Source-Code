@@ -12,13 +12,33 @@
 <!-- <app-like [isActive] = "tweet.isActive" [likesCount] = "tweet.likesCount">
 </app-like>  -->
 
-<div *ngIf="coursesCount.length > 0 then ifpart else elsePart"></div>
+<!-- <div *ngIf="coursesCount.length > 0 then ifpart else elsePart"></div>
 <ng-template #ifpart>
 Some Courses are present
 </ng-template>
 <ng-template #elsePart>
  No Courses
-</ng-template>
+</ng-template> -->
 <!-- <div *ngIf="coursesCount.length == 0">
     No Courses
 </div> -->
+
+<!-- <div [hidden] = "coursesCount.length == 0">
+    List of courses
+</div>
+<div [hidden] = "coursesCount.length > 0">
+    No Courses Yet..!
+</div> -->
+
+<ul class="nav nav-pills" [ngClass]="'externalClass'">
+    <!-- <li [class.active] = "viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+    <li [class.active] = "viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>     -->
+
+    <li [class.active] = "viewMode == 'map'"><a (click)="onTabClick('map')">Map View</a></li>
+    <li [class.active] = "viewMode == 'list'"><a (click)="onTabClick('list')">List View</a></li>    
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase = "'map'">Map View Content</div>
+    <div *ngSwitchCase = "'list'">List View Content</div>
+    <div *ngSwitchDefault>Default Value for Switch ngSwitchCase</div>
+</div>
