@@ -30,18 +30,18 @@ Some Courses are present
     No Courses Yet..!
 </div> -->
 
-<!-- <ul class="nav nav-pills" [ngClass]="'externalClass'">
+<!-- <ul class="nav nav-pills" [ngClass]="externalClass"> -->
     <!-- <li [class.active] = "viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
     <li [class.active] = "viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>     -->
 
-    <!-- <li [class.active] = "viewMode == 'map'"><a (click)="onTabClick('map')">Map View</a></li>
+     <!-- <li [class.active] = "viewMode == 'map'"><a (click)="onTabClick('map')">Map View</a></li>
     <li [class.active] = "viewMode == 'list'"><a (click)="onTabClick('list')">List View</a></li>    
 </ul>
 <div [ngSwitch]="viewMode">
     <div *ngSwitchCase = "'map'">Map View Content</div>
     <div *ngSwitchCase = "'list'">List View Content</div>
     <div *ngSwitchDefault>Default Value for Switch ngSwitchCase</div>
-</div> --> 
+</div>  -->
 
 <!-- <button class="btn btn-primary" (click) = "onAddButton()">ADD</button>
 <ul>
@@ -56,9 +56,44 @@ Some Courses are present
     </li>
 </ul> -->
 
-<button class="btn btn-primary" (click)="loadCourses()">LOAD COURSES</button>
+<!-- <button class="btn btn-primary" (click)="loadCourses()">LOAD COURSES</button>
 <ul>
     <li *ngFor="let course of courses; trackBy:trackCourse">
          {{course.name}}
     </li>
-</ul> 
+</ul>  -->
+
+<!-- <div *ngIf = "coursesCount.length > 0">
+    List Of Courses
+</div> -->
+
+<!-- The Learning Asterisks -->
+<!-- <ng-template [ngIf] = "coursesCount.length > 0">
+    <div>
+        List Of Courses
+    </div>
+</ng-template>
+<ng-template [ngIf] = "!(coursesCount.length > 0)">
+    No Courses baby..!
+</ng-template> -->
+
+<!-- Ng Style Multiple Binding -->
+<!-- <button class="btn btn-primary" (click)="loadCourses()"
+   [ngStyle]="{
+       'color' : styleChange ? 'pink' : 'black'
+   }">
+    Ng Style
+</button> -->
+
+<!-- Safe Traversal Operator -->
+<!-- <span>{{ title.assingne?.name }}</span> -->
+
+<!-- Custom Directive -->
+<!-- <input type="text" [appInputFormat]="'lowercase'"> -->
+
+
+<!-- Assingment Zippy Component -->
+<app-zippy title="Shipping Details">
+Shipping Details..!
+
+</app-zippy>

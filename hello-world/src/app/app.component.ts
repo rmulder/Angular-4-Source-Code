@@ -14,9 +14,11 @@ export class AppComponent {
   //   { id: 3, name: 'Natarajan'}
   // ];
 
+  styleChange = true;
+
   viewMode = 'map';
 
-  coursesCount = [];
+  coursesCount = [12,12];
 
   post = {
     title : 'Saravana',
@@ -26,6 +28,11 @@ export class AppComponent {
   tweet = {
     isActive : 'true',
     likesCount : 10
+  }
+
+  title = {
+    name: 'saravana',
+    assingne: {name: 'sp'}
   }
 
   onChangeFavourite(eventArgs : UserDetails){
@@ -43,18 +50,18 @@ export class AppComponent {
       this.viewMode  = viewMode;
   }
 
-  // onAddButton(){
-  //   this.courses.push({id:4 ,name:'Mallika'});
-  // }
+  onAddButton(){
+    this.courses.push({id:4 ,name:'Mallika'});
+  }
 
-  // onRemoveButton(course){
-  //   let index = this.courses.indexOf(course);
-  //   this.courses.splice(index, 1);
-  // }
+  onRemoveButton(course){
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
 
-  // onUpdateButton(course){
-  //   course.name = 'UPDATED ONE';
-  // }
+  onUpdateButton(course){
+    course.name = 'UPDATED ONE';
+  }
 
 
   courses;

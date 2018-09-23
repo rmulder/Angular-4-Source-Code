@@ -1,6 +1,10 @@
+<!-- [class.glyphicon-star] = "isFavourite"
+[class.glyphicon-star-empty] = "!isFavourite" -->
 <span 
 class="glyphicon"
-[class.glyphicon-star] = "isFavourite"
-[class.glyphicon-star-empty] = "!isFavourite"
+[ngClass] = "{
+    'glyphicon-star' : isFavourite,
+    'glyphicon-star-empty' : !isFavourite
+}"
 (click)="onClick()"
 ></span>
