@@ -1,18 +1,34 @@
-<form>
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input required minlength="5" maxlength="12" pattern="Saravana" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)"
-      id= "firstName" type="text" class="form-control">  
-      <div class="alert alert-danger" *ngIf = "firstName.touched && !firstName.valid">
-        <div *ngIf = "firstName.errors.required">First Name is required..!</div>
-        <div *ngIf="firstName.errors.minlength">First Name should contain atleast {{ firstName.errors.minlength.requiredLength }} Characters..!</div>
-        <div *ngIf="firstName.errors.pattern">First Name doesn't match the pattern..!</div>
-      </div>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+    <div *ngIf = "!contact.isvalid">
+      Display the Error Message for the entire group.
+    </div>
+<div class="form-group">
+  <label for="firstName">First Name</label>
+  <input required minlength="5" maxlength="12" pattern="Saravana" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)"
+    id="firstName" type="text" class="form-control">
+  <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+    <div *ngIf="firstName.errors.required">
+      First Name is required..!
+    </div>
+    <div *ngIf="firstName.errors.minlength">
+      First Name should contain atleast {{ firstName.errors.minlength.requiredLength }} Characters..!
+    </div>
+    <div *ngIf="firstName.errors.pattern">
+      First Name doesn't match the pattern..!
+    </div>
   </div>
+</div>
+  </div>
+  
   <div class="form-group">
     <label for="comment">Comment</label>
     <textarea  ngModel name="comment"
-    id="comment" cols="30" rows="10" class="form-control"></textarea>
+               id="comment" 
+               cols="30" 
+               rows="10" 
+               class="form-control">
+    </textarea>
   </div>
   <button class="btn btn-primary">SUBMIT</button>
 </form>
