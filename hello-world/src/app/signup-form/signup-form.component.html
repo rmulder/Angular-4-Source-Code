@@ -26,7 +26,6 @@
            
              <div *ngIf="username.errors.shouldBeUnique then ifPart else elsePart"></div>
                  <ng-template #ifPart>
-                     Username Already Exists..!
                  </ng-template>
                 <ng-template #elsePart>
                     Username Doesn't Exists,Use this..!

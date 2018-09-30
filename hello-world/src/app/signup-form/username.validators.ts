@@ -27,7 +27,7 @@ export class Usernamevalidators {
                 if(control.value === 'Saravana'){
                     return resolve({ shouldBeUnique: true});
                 } else {
-                    return resolve({ shouldBeUnique: false});
+                    return resolve(null);
                 }
             },2000);
         });
