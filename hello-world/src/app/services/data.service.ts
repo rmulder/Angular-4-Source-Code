@@ -8,7 +8,6 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/promise';
 import 'rxjs/add/observable/throw';
 
 @Injectable()
@@ -41,8 +40,7 @@ export class DataService {
     // return Observable.throw(new AppError());
     return this.http.delete(this.url + '/' + id)
         .map(response => response.json())
-        .toPromise()
-        .retry(3)
+        // .toPromise()
         .catch(this.handleError);
   }
 
