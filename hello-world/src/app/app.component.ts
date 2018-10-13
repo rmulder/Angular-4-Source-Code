@@ -8,15 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  courses = [
-    { id: 1, name: 'Saravana'},
-    { id: 2, name: 'Prasanth'},
-    { id: 3, name: 'Natarajan'}
-  ];
+  // courses = [
+  //   { id: 1, name: 'Saravana'},
+  //   { id: 2, name: 'Prasanth'},
+  //   { id: 3, name: 'Natarajan'}
+  // ];
+
+  styleChange = true;
 
   viewMode = 'map';
 
-  coursesCount = [];
+  coursesCount = [12,12];
 
   post = {
     title : 'Saravana',
@@ -26,6 +28,11 @@ export class AppComponent {
   tweet = {
     isActive : 'true',
     likesCount : 10
+  }
+
+  title = {
+    name: 'saravana',
+    assingne: {name: 'sp'}
   }
 
   onChangeFavourite(eventArgs : UserDetails){
@@ -57,4 +64,17 @@ export class AppComponent {
   }
 
 
+  courses;
+  
+  loadCourses(){
+    this.courses = [
+      { id: 1, name: 'Saravana' },
+      { id: 2, name: 'Prasanth' },
+      { id: 3, name: 'Natarajan' }
+    ];
+  }
+
+  trackCourse(index, course){
+    return course ? course.id : undefined;
+  }
 }

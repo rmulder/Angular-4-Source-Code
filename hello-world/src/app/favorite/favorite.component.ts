@@ -16,7 +16,7 @@ export class FavoriteComponent implements OnInit {
   onClick() {
     let value = {'username':'saravana','password':'prasanth'};
     this.isFavourite = !this.isFavourite;
-    this.click.emit(value);
+    // this.click.emit(value);
   }
   
 }
