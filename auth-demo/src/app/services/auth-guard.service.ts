@@ -1,5 +1,5 @@
 import { AuthService } from './auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterStateSnapshot } from '@angular/router';
 import { CanActivate } from '@angular/router';
 import { Injectable } from '@angular/core';
 
@@ -11,9 +11,9 @@ export class AuthGuardService implements CanActivate{
     private authService: AuthService,
   ) { }
 
-  canActivate(){
+  canActivate(route, state : RouterStateSnapshot){
     if(this.authService.isLoggedIn() && this.authService.userDetails.admin === true) return true;
-    this.route.navigate(["/login"]);
+    this.route.navigate(["/login"], { queryParams : { returnUrl : state.url }});
     return false;
   }
 
