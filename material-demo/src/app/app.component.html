@@ -47,3 +47,71 @@
     cdkTextareaAutosize>
   </textarea>
 </mat-form-field>
+
+<br>
+
+<mat-form-field>
+  <input 
+    [min]="minDate"
+    [max]="maxDate"
+    (focus)="picker.open()"
+    matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker touchUi #picker ></mat-datepicker>
+</mat-form-field>
+
+<br>
+<mat-icon>
+ home
+</mat-icon>
+
+<br>
+
+<button mat-raised-button color="primary">Basic</button>
+<button mat-raised-button color="accent">Basic</button>
+
+<button mat-fab color="accent">
+<mat-icon>check</mat-icon>
+</button>
+
+<br>
+
+<mat-chip-list>
+  <mat-chip
+  *ngFor = "let category of categories"
+  (click)="selectCategory(category)"
+  [selected] = "category.selected"
+  >
+  {{ category.name }}
+  </mat-chip>
+</mat-chip-list>
+
+<br>
+
+<mat-progress-spinner
+mode="determinate" 
+[value]="progress"
+>
+</mat-progress-spinner>
+
+<mat-progress-spinner *ngIf="isLoading"
+mode="indeterminate" 
+>
+</mat-progress-spinner>
+
+<br>
+
+<span matTooltip="Here is my tooltip"
+ matTooltipPosition="right"
+>Saraavan</span>
+
+<br>
+
+<mat-tab-group>
+  <mat-tab label="Billing">
+    Content of billing tab
+  </mat-tab>
+  <mat-tab label="Shipping">
+    Content of shipping tab
+  </mat-tab>
+</mat-tab-group>

@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  progress = 0;
+  timer;
+
+  isLoading = false;
+  constructor() {
+    this.timer = setInterval(() => {
+      this.progress++;
+      if (this.progress === 100) {
+        clearInterval(this.timer);
+      }
+    }, 20);
+    this.isLoading = true;
+    this.getCourses()
+    .subscribe(x => this.isLoading = false);
+  }
   title = 'app';
   isChecked = true;
   colors = [
@@ -16,7 +33,27 @@ export class AppComponent {
 
   color = 2;
 
+  minDate = new Date(2018, 1, 11);
+  maxDate = new Date(2018, 30, 11);
+
+  categories = [
+    {name : 'Beginner'},
+    {name : 'Advanced'},
+    {name : 'Intermediate'}
+  ];
+
   onChange(event) {
     console.log(event);
+  }
+
+  selectCategory(category) {
+    this.categories.
+       filter(c => c !== category)
+      .forEach(c => c['selected'] = false);
+    category.selected = !category.selected;
+  }
+
+  getCourses() {
+    return Observable.timer(2000);
   }
 }
