@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   isChecked = true;
+  colors = [
+    {id : 1, name : 'Red'},
+    {id : 2, name : 'Blue'},
+    {id : 3, name : 'Pink'}
+  ];
+
+  color = 2;
+
   onChange(event) {
     console.log(event);
   }
