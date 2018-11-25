@@ -1,6 +1,6 @@
 import { AdminAuthGuardService } from './services/admin-auth-guard.service';
 import { AuthGuardService } from './services/auth-guard.service';
-import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt/angular2-jwt';
+import { AuthHttp, provideAuth, AuthConfig } from 'angular2-jwt/angular2-jwt';
 import { OrderService } from './services/order.service';
 import { MockBackend } from '@angular/http/testing';
 import { fakeBackendProvider } from './helpers/fake-backend';
@@ -18,6 +18,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +45,6 @@ import { NoAccessComponent } from './no-access/no-access.component';
   ],
   providers: [
     OrderService,
-    AUTH_PROVIDERS,
     AuthService,
     AuthGuardService,
     AdminAuthGuardService,
@@ -52,7 +52,6 @@ import { NoAccessComponent } from './no-access/no-access.component';
     fakeBackendProvider,
     MockBackend,
     BaseRequestOptions
-    
   ],
   bootstrap: [AppComponent]
 })
