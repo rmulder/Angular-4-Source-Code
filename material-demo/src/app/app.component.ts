@@ -1,6 +1,8 @@
+import { EditCourseComponent } from './edit-course/edit-course.component';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/timer';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,7 @@ export class AppComponent {
   timer;
 
   isLoading = false;
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.timer = setInterval(() => {
       this.progress++;
       if (this.progress === 100) {
@@ -55,5 +57,12 @@ export class AppComponent {
 
   getCourses() {
     return Observable.timer(2000);
+  }
+
+  openDialog() {
+    this.dialog.open(EditCourseComponent, {
+      data : { courseId : 1 }
+    })
+    .afterClosed().subscribe(result => console.log(result));
   }
 }
