@@ -13,13 +13,4 @@ export const environment = {
     storageBucket: 'oshop-4482e.appspot.com',
     messagingSenderId: '360500228944'
   }
-
-  // firebase:{
-  //   apiKey: "AIzaSyALRtoBWm0nl7m35-MB6xsg6kdlDz8a0t8",
-  //   authDomain: "fir-demo-4cad5.firebaseapp.com",
-  //   databaseURL: "https://fir-demo-4cad5.firebaseio.com",
-  //   projectId: "fir-demo-4cad5",
-  //   storageBucket: "fir-demo-4cad5.appspot.com",
-  //   messagingSenderId: "467257487807"
-  // }
 };

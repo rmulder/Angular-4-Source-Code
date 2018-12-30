@@ -15,9 +15,9 @@ import { map } from 'rxjs/operators';
 export class AppComponent {
   courses$;
   courseList: AngularFireList<any>;
- 
+
  constructor(private db: AngularFireDatabase) {
-   this.courseList = db.list('/course');
+   this.courseList = db.list('/categories');
    console.log(this.courseList);
   //  this.courses$ = this.courseList.snapshotChanges();
     this.courses$ = this.courseList.snapshotChanges().pipe(
@@ -28,7 +28,7 @@ export class AppComponent {
       })))
     );
  }
- 
+
  add(course: HTMLInputElement) {
    this.courseList.push({
      name: course.value,
@@ -50,6 +50,6 @@ export class AppComponent {
    this.db.object('/course/' + course.key).remove()
     .then(response => {
       console.log('DELETED Successfully..!');
-    })
+    });
  }
 }
