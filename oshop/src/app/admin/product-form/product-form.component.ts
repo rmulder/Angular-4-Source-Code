@@ -1,8 +1,8 @@
+import { CategoryService } from './../../shared/services/category.service';
+import { ProductService } from './../../shared/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ProductService } from 'shared/models/product.service';
 import { map } from 'rxjs/operators';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { CategoryService } from 'shared/models/category.service';
 import { Component, OnInit } from '@angular/core';
  import 'rxjs/add/operator/take';
 import { Observable } from 'rxjs/Observable';

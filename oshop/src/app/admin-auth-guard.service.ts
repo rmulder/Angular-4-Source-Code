@@ -1,8 +1,8 @@
+import { UserService } from './shared/services/user.service';
+import { AuthService } from './shared/services/auth.service';
 import { AppUser } from 'shared/models/app-user';
 import { switchMap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
-import { UserService } from 'shared/models/user.service';
-import { AuthService } from 'shared/models/auth.service';
 import { CanActivate } from '@angular/router';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';

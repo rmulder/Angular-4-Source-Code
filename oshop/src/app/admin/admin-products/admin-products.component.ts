@@ -1,9 +1,9 @@
+import { ProductService } from './../../shared/services/product.service';
 import { query } from '@angular/animations';
 import { DataTableResource } from 'angular5-data-table';
 import { map } from 'rxjs/operators';
 import { Product } from 'shared/models/product';
 import { Subscription } from 'rxjs/Subscription';
-import { ProductService } from 'shared/models/product.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
