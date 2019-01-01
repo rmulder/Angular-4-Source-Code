@@ -13,9 +13,14 @@ export class ShoppingCartService {
     const cartId = await this.getOrCreateCartId();
     const cart = this.db.object('/shopping-carts/' + cartId).snapshotChanges().pipe(
       map((action: any) => {
+        const itemsList = action.payload.val();
         const key = action.key;
+        if (itemsList) {
         const items = action.payload.val().items;
         return new ShoppingCart(key, items);
+        } else {
+          return new ShoppingCart(key, {});
+        }
       })
     );
     return cart;
